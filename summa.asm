@@ -14,8 +14,7 @@ section .text
     _start:
     
     mov r10b, [a]
-    mov r11b, [b]
-    add r10b, r11b
+    add r10b, [b]
     
     add r10b, '0'
     mov [result], r10b
