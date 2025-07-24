@@ -18,15 +18,18 @@ section .text
     
     add r10b, '0'
     mov [result], r10b
-    
+
+    set_syswrite_registers:
     mov rax, 1
     mov rdi, 1
+    ret
+
+    call set_syswrite_registers
     mov rsi, summa
     mov rdx, summa_len
     syscall
-    
-    mov rax, 1
-    mov rdi, 1
+
+    call set_syswrite_registers
     mov rsi, result
     mov rdx, 1
     syscall
