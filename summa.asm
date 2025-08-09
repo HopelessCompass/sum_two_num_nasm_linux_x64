@@ -11,18 +11,18 @@ section .data
     
 section .text
 
-    _start:
-    
+set_syswrite_registers:
+    mov rax, 1
+    mov rdi, 1
+    ret
+
+_start:
+
     mov r10b, [a]
     add r10b, [b]
     
     add r10b, '0'
     mov [result], r10b
-
-    set_syswrite_registers:
-    mov rax, 1
-    mov rdi, 1
-    ret
 
     call set_syswrite_registers
     mov rsi, summa
